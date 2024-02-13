@@ -5,7 +5,6 @@ package AddressBook.data;
  * as well as call the constructor and set the values for each of the entries.
  */
 public class AddressEntry{
-
     String firstName;
     String lastName;
     String street;
@@ -18,6 +17,14 @@ public class AddressEntry{
     public AddressEntry(){
     }
     public AddressEntry(String firstName, String lastName, String street, String city, String state, int zip, String phone, String email){
+        /**
+         * Constructor for an Address Entry
+         * @param firstName The First Name of the person being added to the address book
+         * @param lastName The Last Name of the person being added to the address book
+         *                and the part of the entry that will be used to sort the entries.
+         * @param street Name of the street for the entry
+         *
+         */
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;
