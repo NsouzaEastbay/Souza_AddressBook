@@ -1,6 +1,6 @@
 package AddressBook;
 
-import AddressBook.data.AddressEntry;
+
 /**
  * Main File for the Address Book Application responsible for taking the inputs
  */
