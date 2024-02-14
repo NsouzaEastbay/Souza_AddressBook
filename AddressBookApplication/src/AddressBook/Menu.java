@@ -28,8 +28,22 @@ public class Menu {
             else if (command.equals("b")){
                 addressBook.addressEntryList();
                 AddressEntry Entry = new AddressEntry();
-                String firstName = scanner.nextLine();
-                Entry.setFirstName(firstName);
+                System.out.println("First Name: ");
+                Entry.setFirstName(scanner.nextLine());
+                System.out.println("Last Name: ");
+                Entry.setLastName(scanner.nextLine());
+                System.out.println("Street Name: ");
+                Entry.setStreet(scanner.nextLine());
+                System.out.println("City Name: ");
+                Entry.setCity(scanner.nextLine());
+                System.out.println("State: ");
+                Entry.setState(scanner.nextLine());
+                System.out.println("Zip Code: ");
+                Entry.setZip(scanner.nextInt());
+                System.out.println("Phone Number: ");
+                Entry.setPhone(scanner.nextLine());
+                System.out.println("Email: ");
+                Entry.setEmail(scanner.nextLine());
                 addressBook.add(Entry);
             }
             else if (command.equals("c")){
