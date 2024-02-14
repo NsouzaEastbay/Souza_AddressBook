@@ -9,7 +9,6 @@ public class Menu {
     public void MainMenu(){
         AddressBook addressBook = new AddressBook();
         while (quit) {
-            System.out.println("\n\n");
             System.out.println("---------------------");
             System.out.println("Main Menu");
             System.out.println("a) Load From File");
@@ -38,12 +37,12 @@ public class Menu {
                 Entry.setCity(scanner.nextLine());
                 System.out.println("State: ");
                 Entry.setState(scanner.nextLine());
-                System.out.println("Zip Code: ");
-                Entry.setZip(scanner.nextInt());
                 System.out.println("Phone Number: ");
                 Entry.setPhone(scanner.nextLine());
                 System.out.println("Email: ");
                 Entry.setEmail(scanner.nextLine());
+                System.out.println("Zip Code: ");
+                Entry.setZip(scanner.nextInt());
                 addressBook.add(Entry);
             }
             else if (command.equals("c")){

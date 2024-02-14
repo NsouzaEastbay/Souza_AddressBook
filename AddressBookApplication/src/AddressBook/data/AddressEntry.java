@@ -37,14 +37,12 @@ public class AddressEntry{
 
     @Override
     public String toString() {
-        return  "First Name  : " + firstName + '\n' +
-                "Last Name   : " + lastName + '\n' +
-                "Street Name : " + street + '\n' +
-                "City Name   : " + city + '\n' +
-                "State       : " + state + '\n' +
-                "Zip Code    : " + zip + '\n' +
-                "Phone Number: " + phone + '\n' +
-                "Email       : " + email + "\n";
+        return firstName + " " + lastName + "\n"
+                + street + "\n" + city + ","
+                + state + " "
+                + zip + "\n"
+                + email + "\n"
+                + phone + "\n";
     }
 
     public void setFirstName(String firstName) {
