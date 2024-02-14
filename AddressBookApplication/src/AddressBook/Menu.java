@@ -1,12 +1,13 @@
 package AddressBook;
 
 import java.util.Scanner;
+import AddressBook.data.AddressEntry;
 
 public class Menu {
     String command;
     boolean quit = true;
     public void MainMenu(){
-
+        AddressBook addressBook = new AddressBook();
         while (quit) {
             System.out.println("\n\n");
             System.out.println("---------------------");
@@ -22,10 +23,14 @@ public class Menu {
             Scanner scanner = new Scanner(System.in);
             command = scanner.nextLine();
             if (command.equals("a")){
-                System.out.println("It Works");
+
             }
             else if (command.equals("b")){
-
+                addressBook.addressEntryList();
+                AddressEntry Entry = new AddressEntry();
+                String firstName = scanner.nextLine();
+                Entry.setFirstName(firstName);
+                addressBook.add(Entry);
             }
             else if (command.equals("c")){
 
@@ -34,7 +39,10 @@ public class Menu {
 
             }
             else if (command.equals("e")){
-
+                AddressEntry[] addressEntries = addressBook.list();
+                for (AddressEntry addressEntry : addressEntries) {
+                    System.out.println(addressEntry.toString());
+                }
             }
             else if (command.equals("f")){
                 quit = false;

@@ -7,8 +7,6 @@ import AddressBook.data.AddressEntry;
 
 public class AddressBookApplication {
     public static void main(String[] args) {
-        AddressBook addressBook = new AddressBook();
-        AddressEntry Entry = new AddressEntry();
         Menu Menu = new Menu();
         Menu.MainMenu();
     }
