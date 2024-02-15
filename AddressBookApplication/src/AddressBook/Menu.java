@@ -54,6 +54,7 @@ public class Menu {
 
             }
             else if (command.equals("d")){
+                System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
 
             }
             else if (command.equals("e")){
