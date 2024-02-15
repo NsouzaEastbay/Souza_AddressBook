@@ -3,6 +3,11 @@ package AddressBook;
 import java.util.Scanner;
 import AddressBook.data.AddressEntry;
 
+/**
+ * The Menu class is for all the prompts that the users will need to navigate the program.
+ * It includes the ability for the user to Load from File, Add a new entry, delete an existing
+ * entry, find a previously entered entry, and list all the current entries.
+ */
 public class Menu {
     String command;
     boolean quit = true;

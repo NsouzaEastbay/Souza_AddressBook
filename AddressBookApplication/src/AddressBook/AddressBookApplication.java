@@ -2,7 +2,7 @@ package AddressBook;
 
 
 /**
- * Main File for the Address Book Application responsible for taking the inputs
+ * Main File for the Address Book Application responsible for starting the program
  */
 
 public class AddressBookApplication {
