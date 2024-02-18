@@ -13,6 +13,7 @@ public class Menu {
     boolean quit = true;
     public void MainMenu(){
         AddressBook addressBook = new AddressBook();
+        addressBook.addressEntryList();
         while (quit) {
             System.out.println("---------------------");
             System.out.println("Main Menu");
@@ -30,7 +31,6 @@ public class Menu {
 
             }
             else if (command.equals("b")){
-                addressBook.addressEntryList();
                 AddressEntry Entry = new AddressEntry();
                 System.out.println("First Name: ");
                 Entry.setFirstName(scanner.nextLine());
