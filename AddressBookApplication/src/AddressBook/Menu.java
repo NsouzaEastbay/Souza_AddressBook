@@ -53,7 +53,7 @@ public class Menu {
                 addressBook.add(Entry);
             }
             else if (command.equals("c")){
-
+                System.out.println("Enter the Last Name of the contact you wish to remove:");
             }
             else if (command.equals("d")){
                 System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
@@ -61,8 +61,11 @@ public class Menu {
             }
             else if (command.equals("e")){
                 AddressEntry[] addressEntries = addressBook.list();
+                int i = 1;
                 for (AddressEntry addressEntry : addressEntries) {
+                    System.out.print(i + ": ");
                     System.out.println(addressEntry.toString());
+                    i++;
                 }
             }
             else if (command.equals("f")){
