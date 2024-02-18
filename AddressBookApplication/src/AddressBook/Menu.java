@@ -28,7 +28,9 @@ public class Menu {
             Scanner scanner = new Scanner(System.in);
             command = scanner.nextLine();
             if (command.equals("a")){
-
+                System.out.println("Enter Name of File You Wish to Import:");
+                String filename = scanner.nextLine();
+                addressBook.readFromFile(filename);
             }
             else if (command.equals("b")){
                 AddressEntry Entry = new AddressEntry();

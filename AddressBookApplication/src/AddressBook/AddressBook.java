@@ -34,7 +34,7 @@ public class AddressBook {
                 Entry.setState(readFile.nextLine());
                 Entry.setPhone(readFile.nextLine());
                 Entry.setEmail(readFile.nextLine());
-                Entry.setZip(readFile.nextInt());
+                Entry.setZip(Integer.parseInt(readFile.nextLine()));
                 add(Entry);
             }
         }
