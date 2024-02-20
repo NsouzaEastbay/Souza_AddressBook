@@ -45,16 +45,24 @@ public class AddressBook {
     public void remove(String lastName){
 
     }
-    public boolean find(String startOf_lastName){
-        if (startOf_lastName.equals("a")){
-        return true;
+
+    public void find(String startOf_lastName){
+        List<AddressEntry> foundEntryList;
+        foundEntryList = new ArrayList<>();
+        AddressEntry[] addressEntries = list();
+        for (AddressEntry addressEntry : addressEntries) {
+            String currentLastName = addressEntry.getLastName();
+            if (currentLastName.toLowerCase().contains(startOf_lastName.toLowerCase())){
+                foundEntryList.add(addressEntry);
+            }
         }
-        else{
-            return false;
+        if (!foundEntryList.isEmpty()){
+            System.out.println("These Entries have been found:");
+            int i = 0;
+            System.out.println(i +":" + foundEntryList.get(i));
+            i++;
+            return;
         }
+        System.out.println("No Entries Found with part of Last Name" + startOf_lastName);
     }
-    /*
-    remove(lastName)
-    find(startOf_lastName)
-     */
 }

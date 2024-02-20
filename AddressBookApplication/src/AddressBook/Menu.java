@@ -61,12 +61,7 @@ public class Menu {
                 case "d" -> {
                     System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
                     String startOf_lastName = scanner.nextLine();
-                    if (addressBook.find(startOf_lastName) == true){
-                        System.out.println("These Entries have been found:");
-                    }
-                    else{
-                        System.out.println("No entries found with last name");
-                    }
+                    addressBook.find(startOf_lastName);
                 }
                 case "e" -> {
                     AddressEntry[] addressEntries = addressBook.list();
