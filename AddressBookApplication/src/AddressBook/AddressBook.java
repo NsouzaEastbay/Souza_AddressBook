@@ -17,6 +17,12 @@ public class AddressBook {
     }
     public AddressEntry[] list(){
         AddressEntry[] completeList = new AddressEntry[this.addressEntryList.size()];
+        addressEntryList.sort(new Comparator<AddressEntry>() {
+            @Override
+            public int compare(AddressEntry o1, AddressEntry o2) {
+                return o1.getLastName().compareTo(o2.getLastName());
+            }
+        });
         this.addressEntryList.toArray(completeList);
         return completeList;
     }
