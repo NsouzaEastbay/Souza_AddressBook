@@ -18,7 +18,6 @@ public class AddressBook {
     public AddressEntry[] list(){
         AddressEntry[] completeList = new AddressEntry[this.addressEntryList.size()];
         this.addressEntryList.toArray(completeList);
-        //Arrays.sort(completeList);
         return completeList;
     }
     public void readFromFile(String filename){

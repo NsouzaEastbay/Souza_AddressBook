@@ -27,53 +27,48 @@ public class Menu {
 
             Scanner scanner = new Scanner(System.in);
             command = scanner.nextLine();
-            if (command.equals("a")){
-                System.out.println("Enter Name of File You Wish to Import:");
-                String filename = scanner.nextLine();
-                addressBook.readFromFile(filename);
-            }
-            else if (command.equals("b")){
-                AddressEntry Entry = new AddressEntry();
-                System.out.println("First Name: ");
-                Entry.setFirstName(scanner.nextLine());
-                System.out.println("Last Name: ");
-                Entry.setLastName(scanner.nextLine());
-                System.out.println("Street Name: ");
-                Entry.setStreet(scanner.nextLine());
-                System.out.println("City Name: ");
-                Entry.setCity(scanner.nextLine());
-                System.out.println("State: ");
-                Entry.setState(scanner.nextLine());
-                System.out.println("Phone Number: ");
-                Entry.setPhone(scanner.nextLine());
-                System.out.println("Email: ");
-                Entry.setEmail(scanner.nextLine());
-                System.out.println("Zip Code: ");
-                Entry.setZip(scanner.nextInt());
-                addressBook.add(Entry);
-            }
-            else if (command.equals("c")){
-                System.out.println("Enter the Last Name of the contact you wish to remove:");
-            }
-            else if (command.equals("d")){
-                System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
-
-            }
-            else if (command.equals("e")){
-                AddressEntry[] addressEntries = addressBook.list();
-                int i = 1;
-                for (AddressEntry addressEntry : addressEntries) {
-                    System.out.print(i + ": ");
-                    System.out.println(addressEntry.toString());
-                    i++;
+            switch (command) {
+                case "a" -> {
+                    System.out.println("Enter Name of File You Wish to Import:");
+                    String filename = scanner.nextLine();
+                    addressBook.readFromFile(filename);
                 }
-            }
-            else if (command.equals("f")){
-                quit = false;
-            }
-            else{
-                System.out.println("Invalid Command");
-                System.out.println("\n\n");
+                case "b" -> {
+                    AddressEntry Entry = new AddressEntry();
+                    System.out.println("First Name: ");
+                    Entry.setFirstName(scanner.nextLine());
+                    System.out.println("Last Name: ");
+                    Entry.setLastName(scanner.nextLine());
+                    System.out.println("Street Name: ");
+                    Entry.setStreet(scanner.nextLine());
+                    System.out.println("City Name: ");
+                    Entry.setCity(scanner.nextLine());
+                    System.out.println("State: ");
+                    Entry.setState(scanner.nextLine());
+                    System.out.println("Phone Number: ");
+                    Entry.setPhone(scanner.nextLine());
+                    System.out.println("Email: ");
+                    Entry.setEmail(scanner.nextLine());
+                    System.out.println("Zip Code: ");
+                    Entry.setZip(scanner.nextInt());
+                    addressBook.add(Entry);
+                }
+                case "c" -> System.out.println("Enter the Last Name of the contact you wish to remove:");
+                case "d" -> System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
+                case "e" -> {
+                    AddressEntry[] addressEntries = addressBook.list();
+                    int i = 1;
+                    for (AddressEntry addressEntry : addressEntries) {
+                        System.out.print(i + ": ");
+                        System.out.println(addressEntry.toString());
+                        i++;
+                    }
+                }
+                case "f" -> quit = false;
+                default -> {
+                    System.out.println("Invalid Command");
+                    System.out.println("\n\n");
+                }
             }
         }
     }
