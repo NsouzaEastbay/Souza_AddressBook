@@ -57,12 +57,15 @@ public class AddressBook {
             }
         }
         if (!foundEntryList.isEmpty()){
-            System.out.println("These Entries have been found:");
+            System.out.println("These Entries have been found:\n");
             int i = 0;
-            System.out.println(i +":" + foundEntryList.get(i));
-            i++;
+            int size = foundEntryList.size();
+            for(int k = 1; i < size; k++){
+                System.out.println(k +":" + foundEntryList.get(i));
+                i++;
+            }
             return;
         }
-        System.out.println("No Entries Found with part of Last Name" + startOf_lastName);
+        System.out.println("No Entries Found with part of Last Name: " + startOf_lastName);
     }
 }
