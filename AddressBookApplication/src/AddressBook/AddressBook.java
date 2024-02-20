@@ -42,6 +42,17 @@ public class AddressBook {
             System.out.println("File Not Found");
         }
     }
+    public void remove(String lastName){
+
+    }
+    public boolean find(String startOf_lastName){
+        if (startOf_lastName.equals("a")){
+        return true;
+        }
+        else{
+            return false;
+        }
+    }
     /*
     remove(lastName)
     find(startOf_lastName)

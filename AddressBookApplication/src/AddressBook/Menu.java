@@ -58,7 +58,16 @@ public class Menu {
                     System.out.println("The following entry has been found:");
                     System.out.println("Enter 'y' to confirm or 'n' to return to the main menu");
                 }
-                case "d" -> System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
+                case "d" -> {
+                    System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
+                    String startOf_lastName = scanner.nextLine();
+                    if (addressBook.find(startOf_lastName) == true){
+                        System.out.println("These Entries have been found:");
+                    }
+                    else{
+                        System.out.println("No entries found with last name");
+                    }
+                }
                 case "e" -> {
                     AddressEntry[] addressEntries = addressBook.list();
                     int i = 1;
