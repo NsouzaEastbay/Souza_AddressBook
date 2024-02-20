@@ -53,7 +53,11 @@ public class Menu {
                     Entry.setZip(scanner.nextInt());
                     addressBook.add(Entry);
                 }
-                case "c" -> System.out.println("Enter the Last Name of the contact you wish to remove:");
+                case "c" -> {
+                    System.out.println("Enter the Last Name of the contact you wish to remove:");
+                    System.out.println("The following entry has been found:");
+                    System.out.println("Enter 'y' to confirm or 'n' to return to the main menu");
+                }
                 case "d" -> System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
                 case "e" -> {
                     AddressEntry[] addressEntries = addressBook.list();
