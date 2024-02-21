@@ -9,6 +9,7 @@ import java.io.*;
  */
 public class AddressBook {
     List<AddressEntry> addressEntryList;
+    List<AddressEntry> foundEntryList;
     public void addressEntryList(){
         this.addressEntryList = new ArrayList<>();
     }
@@ -43,11 +44,41 @@ public class AddressBook {
         }
     }
     public void remove(String lastName){
+        int size = foundEntryList.size();
+        if (size == 1){
+            System.out.println("Enter 'y' to confirm or 'n' to return to the main menu");
+            Scanner scanner = new Scanner(System.in);
+            String selection = scanner.nextLine();
+            if (selection.equalsIgnoreCase("y")){
 
+            }
+            else{
+                System.out.println("Returning to Main Menu");
+            }
+        }
+        else{
+            System.out.println("Enter the Number of the Entry you wish to remove:");
+            Scanner scanner = new Scanner(System.in);
+            int entryNumber = scanner.nextInt();
+            if (entryNumber <= size && entryNumber > 0){
+                System.out.println(foundEntryList.get(entryNumber - 1));
+                String selection = scanner.nextLine();
+                if (selection.equalsIgnoreCase("y")){
+
+                }
+                else{
+                    System.out.println("Returning to Main Menu");
+                }
+            }
+            else if(entryNumber > size || entryNumber < 0){
+                System.out.println("Invalid Entry Number");
+            }
+            else {
+                System.out.println("Invalid String returning to Main Menu");
+            }
+        }
     }
-
-    public void find(String startOf_lastName){
-        List<AddressEntry> foundEntryList;
+    public boolean find(String startOf_lastName){
         foundEntryList = new ArrayList<>();
         AddressEntry[] addressEntries = list();
         for (AddressEntry addressEntry : addressEntries) {
@@ -64,8 +95,9 @@ public class AddressBook {
                 System.out.println(k +":" + foundEntryList.get(i));
                 i++;
             }
-            return;
+            return true;
         }
         System.out.println("No Entries Found with part of Last Name: " + startOf_lastName);
+        return false;
     }
 }

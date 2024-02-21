@@ -55,8 +55,14 @@ public class Menu {
                 }
                 case "c" -> {
                     System.out.println("Enter the Last Name of the contact you wish to remove:");
-                    System.out.println("The following entry has been found:");
-                    System.out.println("Enter 'y' to confirm or 'n' to return to the main menu");
+                    String lastName = scanner.nextLine();
+                    if (addressBook.find(lastName)){
+                        addressBook.remove(lastName);
+                    }
+                    else{
+                        System.out.println("No Entry Found will last name: "+ lastName);
+                        return;
+                    }
                 }
                 case "d" -> {
                     System.out.println("Enter Part of all of the Last Name of the entry you wish to find:");
