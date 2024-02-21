@@ -57,7 +57,7 @@ public class Menu {
                     System.out.println("Enter the Last Name of the contact you wish to remove:");
                     String lastName = scanner.nextLine();
                     if (addressBook.find(lastName)){
-                        addressBook.remove(lastName);
+                        addressBook.remove();
                     }
                     else{
                         System.out.println("No Entry Found will last name: "+ lastName);

@@ -44,7 +44,7 @@ public class AddressBook {
             System.out.println("File Not Found");
         }
     }
-    public void remove(String lastName){
+    public void remove(){
         int size = foundEntryList.size();
         if (size == 1){
             System.out.println("Enter 'y' to confirm or 'n' to return to the main menu");
