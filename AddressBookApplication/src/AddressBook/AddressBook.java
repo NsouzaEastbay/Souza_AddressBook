@@ -10,6 +10,7 @@ import java.io.*;
 public class AddressBook {
     List<AddressEntry> addressEntryList;
     List<AddressEntry> foundEntryList;
+    int[] indexofEntries;
     public void addressEntryList(){
         this.addressEntryList = new ArrayList<>();
     }
@@ -50,7 +51,7 @@ public class AddressBook {
             Scanner scanner = new Scanner(System.in);
             String selection = scanner.nextLine();
             if (selection.equalsIgnoreCase("y")){
-
+                addressEntryList.remove(indexofEntries[0]);
             }
             else{
                 System.out.println("Returning to Main Menu");
@@ -61,10 +62,10 @@ public class AddressBook {
             Scanner scanner = new Scanner(System.in);
             int entryNumber = scanner.nextInt();
             if (entryNumber <= size && entryNumber > 0){
-                System.out.println(foundEntryList.get(entryNumber - 1));
-                String selection = scanner.nextLine();
+                System.out.println("Enter 'y' to confirm or 'n' to return to the main menu");
+                String selection = scanner.next();
                 if (selection.equalsIgnoreCase("y")){
-
+                    addressEntryList.remove(indexofEntries[entryNumber - 1]);
                 }
                 else{
                     System.out.println("Returning to Main Menu");
@@ -81,10 +82,14 @@ public class AddressBook {
     public boolean find(String startOf_lastName){
         foundEntryList = new ArrayList<>();
         AddressEntry[] addressEntries = list();
+        indexofEntries = new int[addressEntryList.size()];
+        int e = 0;
         for (AddressEntry addressEntry : addressEntries) {
             String currentLastName = addressEntry.getLastName();
             if (currentLastName.toLowerCase().contains(startOf_lastName.toLowerCase())){
+                indexofEntries[e] = addressEntryList.indexOf(addressEntry);
                 foundEntryList.add(addressEntry);
+                e++;
             }
         }
         if (!foundEntryList.isEmpty()){
