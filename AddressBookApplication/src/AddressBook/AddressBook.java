@@ -5,24 +5,43 @@ import java.util.*;
 import java.io.*;
 
 /**
- * The class responsible for reading and writing the data for each entry.
+ * The class responsible for saving each entry to a list, finding an entry, and removing entries.
  */
 public class AddressBook {
     List<AddressEntry> addressEntryList;
     List<AddressEntry> foundEntryList;
     int[] indexofEntries;
+
+    /**
+     *
+     */
     public void addressEntryList(){
         this.addressEntryList = new ArrayList<>();
     }
+
+    /**
+     * Class responsible for adding new entries to the list
+     * @param addressEntry The actual entry that is added to the list passed in after being created.
+     */
     public void add(AddressEntry addressEntry){
         this.addressEntryList.add(addressEntry);
     }
+
+    /**
+     * Function responsible for creating and sorting the list that will be displayed to the user.
+     * @return The complete and sorted list of all the entries is returned to be printed
+     */
     public AddressEntry[] list(){
         AddressEntry[] completeList = new AddressEntry[this.addressEntryList.size()];
         addressEntryList.sort(Comparator.comparing(AddressEntry::getLastName));
         this.addressEntryList.toArray(completeList);
         return completeList;
     }
+
+    /**
+     * Function responsible for taking in entries from a file and adding them to the list.
+     * @param filename The name of the file that will be read from to obtain the new entries
+     */
     public void readFromFile(String filename){
         try {
             File File = new File(filename);

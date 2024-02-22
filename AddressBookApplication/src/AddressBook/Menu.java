@@ -11,6 +11,10 @@ import AddressBook.data.AddressEntry;
 public class Menu {
     String command;
     boolean quit = true;
+
+    /**
+     * Class responsible for creating the menu for user inputs as well as calling the function related to their choice
+     */
     public void MainMenu(){
         AddressBook addressBook = new AddressBook();
         addressBook.addressEntryList();

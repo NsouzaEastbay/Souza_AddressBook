@@ -14,10 +14,13 @@ public class AddressEntry{
     String phone;
     String email;
 
+    /**
+     * Default constructor for an Address Entry
+     */
     public AddressEntry(){
     }
     /**
-     * Default constructor for an Address Entry
+     * The constructor for an Address Entry in which the fields are passed into the constructor.
      * @param firstName The First Name of the person being added to the address book
      * @param lastName The Last Name of the person being added to the address book
      *                and the part of the entry that will be used to sort the entries.
@@ -39,6 +42,9 @@ public class AddressEntry{
         this.email = email;
     }
 
+    /**
+     * @return Passes the structure of the Address Entry that will be output.
+     */
     @Override
     public String toString() {
         return firstName + " " + lastName + "\n"
@@ -49,26 +55,50 @@ public class AddressEntry{
                 + phone + "\n";
     }
 
+    /**
+     * Sets the first name of the address entry.
+     * @param firstName The First Name of the Address Entry
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * Gets the first name of the current entry and returns that value.
+     * @return the first name of the address entry.
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * Sets the last name of the address entry
+     * @param lastName The Last Name of the Address Entry
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Gets the last name of the current entry and returns that value.
+     * @return the last name of the address entry
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * Sets the state for the current address Entry
+     * @param state The name of the state for the address entry
+     */
     public void setState(String state) {
         this.state = state;
     }
 
+    /**
+     * Gets the name of the state for the current address entry
+     * @return the name of the state for the address entry
+     */
     public String getState() {
         return state;
     }
