@@ -103,13 +103,27 @@ public class AddressEntry{
         return state;
     }
 
+    /**
+     * Sets the city for the current entry
+     * @param city The city associated with the current entry
+     */
+
     public void setCity(String city) {
         this.city = city;
     }
 
+    /**
+     * Gets the name of the city for the entry
+     * @return Name of the City for the entry
+     */
     public String getCity() {
         return city;
     }
+
+    /**
+     * Sets the name for the street of the current entry.
+     * @param street Name of the street for the current entry
+     */
 
     public void setStreet(String street) {
         this.street = street;
