@@ -87,7 +87,10 @@ public class Menu {
                         i++;
                     }
                 }
-                case "f" -> quit = false;
+                case "f" -> {
+                    System.out.println("Closing Program");
+                    quit = false;
+                }
                 default -> {
                     System.out.println("Invalid Command");
                     System.out.println("\n\n");
