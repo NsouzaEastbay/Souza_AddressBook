@@ -13,7 +13,7 @@ public class AddressBook {
     int[] indexofEntries;
 
     /**
-     *
+     * Creates the array list with no entries, so it is ready to be used by functions below.
      */
     public void addressEntryList(){
         this.addressEntryList = new ArrayList<>();
@@ -63,6 +63,12 @@ public class AddressBook {
             System.out.println("File Not Found");
         }
     }
+
+    /**
+     * Function responsible for removing entries from the list, it does this by finding any entry
+     * related to the user search then narrowing it down to a specific entry before removing
+     * that entry's index.
+     */
     public void remove(){
         int size = foundEntryList.size();
         if (size == 1){
@@ -98,6 +104,16 @@ public class AddressBook {
             }
         }
     }
+
+    /**
+     * This boolean is responsible for both creating the list of all entries that match the search
+     * criteria and creating an array of index numbers for those entries in case a remove is
+     * using the result.
+     * @param startOf_lastName The piece of the last name that will be searched to determine
+     *                         if there are in the list that can be found
+     * @return This is a boolean that returns whether any entry was found or if the string wasn't
+     * in any last names
+     */
     public boolean find(String startOf_lastName){
         foundEntryList = new ArrayList<>();
         AddressEntry[] addressEntries = list();

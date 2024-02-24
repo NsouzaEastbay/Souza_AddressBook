@@ -129,30 +129,59 @@ public class AddressEntry{
         this.street = street;
     }
 
+    /**
+     * Gets the name for the street of the current entry.
+     * @return Name of the street for the current entry
+     */
+
     public String getStreet() {
         return street;
     }
 
+    /**
+     * Gets the Zip Code for the current entry.
+     * @return Zip code for the current entry.
+     */
     public int getZip() {
         return zip;
     }
 
+    /**
+     * Sets the Zip Code for the current entry.
+     * @param zip Zip code for the current entry.
+     */
     public void setZip(int zip) {
         this.zip = zip;
     }
 
+    /**
+     * Sets the phone number for the current entry.
+     * @param phone The Phone number for the current entry.
+     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
+    /**
+     * Gets the phone number for the current entry.
+     * @return The Phone number for the current entry.
+     */
     public String getPhone() {
         return phone;
     }
 
+    /**
+     * Sets the email address for the current entry.
+     * @param email The email address of the current entry.
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Gets the email address for the current entry.
+     * @return The email address of the current entry.
+     */
     public String getEmail() {
         return email;
     }

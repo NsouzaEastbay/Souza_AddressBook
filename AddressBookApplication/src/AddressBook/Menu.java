@@ -13,7 +13,12 @@ public class Menu {
     boolean quit = true;
 
     /**
-     * Class responsible for creating the menu for user inputs as well as calling the function related to their choice
+     * Function responsible for creating the menu for user inputs as well
+     * as calling the function related to their choice. The function first
+     * prints out a menu of choices for the user that will then accept the
+     * letter associated with each of the functions displayed. If any of the
+     * letters from the list are chosen, it will ask the user for the appropriate
+     * input before calling the function.
      */
     public void MainMenu(){
         AddressBook addressBook = new AddressBook();
@@ -31,7 +36,7 @@ public class Menu {
 
             Scanner scanner = new Scanner(System.in);
             command = scanner.nextLine();
-            switch (command) {
+            switch (command.toLowerCase()) {
                 case "a" -> {
                     System.out.println("Enter Name of File You Wish to Import:");
                     String filename = scanner.nextLine();

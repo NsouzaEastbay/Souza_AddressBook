@@ -1,4 +1,4 @@
-package AddressBook.data;
+package AddressBook.Testing;
 
 class AddressEntryTest {
 

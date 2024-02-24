@@ -1,4 +1,4 @@
-package AddressBook;
+package AddressBook.Testing;
 
 import org.junit.jupiter.api.Test;
 
